@@ -1,1 +1,84 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('./assets/fonts/e-Ukraine/e-Ukraine-Thin.otf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('./assets/fonts/e-Ukraine/e-Ukraine-Ultralight.otf') format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('./assets/fonts/e-Ukraine/e-Ukraine-Light.otf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('./assets/fonts/e-Ukraine/e-Ukraine-Regular.otf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('./assets/fonts/e-Ukraine/e-Ukraine-Medium.otf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('./assets/fonts/e-Ukraine/e-Ukraine-Bold.otf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'e-UkraineHead';
+  src: url('./assets/fonts/e-Ukraine/e-UkraineHead-Thin.otf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'e-UkraineHead';
+  src: url('./assets/fonts/e-Ukraine/e-UkraineHead-Ultralight.otf') format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'e-UkraineHead';
+  src: url('./assets/fonts/e-Ukraine/e-UkraineHead-Light.otf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'e-UkraineHead';
+  src: url('./assets/fonts/e-Ukraine/e-UkraineHead-Regular.otf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'e-UkraineHead';
+  src: url('./assets/fonts/e-Ukraine/e-UkraineHead-Medium.otf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'e-UkraineHead';
+  src: url('./assets/fonts/e-Ukraine/e-UkraineHead-Bold.otf') format('truetype');
+  font-weight: 700;
+}
+
+@layer utilities {
+  .font-e-Ukraine {
+    font-family: 'e-Ukraine', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-e-UkraineHead {
+    font-family: 'e-UkraineHead', sans-serif;
+  }
+}
