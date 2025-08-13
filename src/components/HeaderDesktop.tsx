@@ -1,6 +1,6 @@
 import { Link} from "react-router";
 import { RxChevronRight } from "react-icons/rx";
-import MolradaLogo from '../assets/Молрада_лого.svg'
+import MolradaLogo from '../assets/Logo/Молрада_лого.svg'
 
 type HeaderItem = {
   title: string;
@@ -47,7 +47,7 @@ function HeaderItem({title, to}: HeaderItem){
 
 function HeaderDesktop(){
   return(
-    <header className="w-full h-20 px-7 py-2 fixed z-500 flex flex-row justify-start items-center gap-5">
+    <header className="w-full h-20 px-7 py-2 fixed z-500 flex flex-row justify-start items-center gap-5 font-e-UkraineHead">
       <Link to="/" className="w-12 h-12 cursor-pointer">
         <img src={MolradaLogo} alt="Миколаївпастранс_лого" className="w-13"/>
       </Link>

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { RxHamburgerMenu, RxChevronRight } from "react-icons/rx";
-import MolradaLogo from '../assets/Молрада_лого.svg'
+import MolradaLogo from '../assets/Logo/Молрада_лого.svg'
 
 type HeaderItem = {
   to: string;
@@ -83,7 +83,7 @@ function HeaderMobile(){
         </Link>
         <RxHamburgerMenu className='w-10 h-10 cursor-pointer' onClick={handleClick}/>
       </div>
-      <div className={`overflow-hiden transition-all duration-500 px-8 ${isOpen ? 'h-[calc(100vh-80px)] opacity-100 pointer-events-auto py-8' : 'h-0 opacity-0 pointer-events-none p-0'} flex flex-col gap-[10px]`}>
+      <div className={`bg-white overflow-hiden transition-all duration-500 px-8 ${isOpen ? 'h-[calc(100vh-80px)] opacity-100 pointer-events-auto py-8' : 'h-0 opacity-0 pointer-events-none p-0'} flex flex-col gap-[10px]`}>
         <h3 className="font-bold uppercase text-center">меню</h3>
         <HeaderItem to="/">Головна</HeaderItem>
         <Dropdown title="про нас" to="/about">
