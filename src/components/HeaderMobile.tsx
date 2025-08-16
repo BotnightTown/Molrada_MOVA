@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router";
+import { HashLink } from 'react-router-hash-link';
 import { RxHamburgerMenu, RxChevronRight } from "react-icons/rx";
 import MolradaLogo from '../assets/Logo/Молрада_лого.svg'
 
 type HeaderItem = {
   to: string;
-  children:React.ReactNode;
+  title: string;
 }
 type Dropdown = {
   title: string; 
@@ -19,13 +20,13 @@ type DropdownItem = {
 
 function DropdownItem({title, to}:DropdownItem){
   return(
-    <Link to={to} className="text-xs font-light uppercase hover:text-[#4ACBD1] transition-all duration-300">
+    <HashLink to={to} className="text-xs font-light uppercase hover:text-[#4ACBD1] transition-all duration-300">
       {title}
-    </Link>
+    </HashLink>
   )
 }
 
-function Dropdown({title, children}:Dropdown){
+function Dropdown({to, title, children}:Dropdown){
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [height, setHeight] = useState<string>("0px");
   const contentRef = useRef<HTMLDivElement>(null);
@@ -43,7 +44,7 @@ function Dropdown({title, children}:Dropdown){
   return(
     <div className="py-2 border-[#4ACBD1] border-b-2">
       <div className="flex flex-row justify-between cursor-pointer" onClick={handleClick}>
-        <h4 className="text-sm uppercase font-bold">{title}</h4>
+        <Link to={to}><h4 className="text-sm uppercase font-bold">{title}</h4></Link>
         <RxChevronRight className={`text-base transition-all duration-800 ease-in-out ${isOpen ? "rotate-90" : "rotate-0"}`}/>
       </div>
       <div
@@ -57,10 +58,10 @@ function Dropdown({title, children}:Dropdown){
   )
 }
 
-function HeaderItem({to, children}: HeaderItem){
+function HeaderItem({to, title}: HeaderItem){
   return(
     <Link to={to} className="py-2 border-[#4ACBD1] border-b-2 text-sm uppercase font-bold cursor-pointer">
-      {children}
+      {title}
     </Link>
   )
 }
@@ -85,15 +86,14 @@ function HeaderMobile(){
       </div>
       <div className={`bg-white overflow-hiden transition-all duration-500 px-8 ${isOpen ? 'h-[calc(100vh-80px)] opacity-100 pointer-events-auto py-8' : 'h-0 opacity-0 pointer-events-none p-0'} flex flex-col gap-[10px]`}>
         <h3 className="font-bold uppercase text-center">меню</h3>
-        <HeaderItem to="/">Головна</HeaderItem>
+        <HeaderItem to="/" title="Головна" />
         <Dropdown title="про нас" to="/about">
-          <DropdownItem title="наша мета" to=""/>
-          <DropdownItem title="функції молодіжної ради" to=""/>
-          <DropdownItem title="структура молодіжної ради" to=""/>
-          <DropdownItem title="команди/моніторинг/адвокація" to=""/>
+          <DropdownItem title="наша мета" to="/about/#goal"/>
+          <DropdownItem title="структура молодіжної ради" to="/about/#struct"/>
+          <DropdownItem title="команди/моніторинг/адвокація" to="/about/#teams"/>
         </Dropdown>
-        <HeaderItem to="/map">молодіжна мапа області</HeaderItem>
-        <HeaderItem to="/feedback">зворотний зв'язок</HeaderItem>
+        <HeaderItem to="/map" title="молодіжна мапа області" />
+        <HeaderItem to="/feedback" title="зворотний зв'язок" />
       </div>
     </header>
   )

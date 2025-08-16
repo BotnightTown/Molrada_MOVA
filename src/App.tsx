@@ -2,7 +2,11 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { Routes, Route } from "react-router";
 import HeaderMobile from "./components/HeaderMobile";
 import HeaderDesktop from "./components/HeaderDesktop";
+import Footer from "./components/Footer";
 import MainPage from "./pages/MainPage";
+import AboutPage from "./pages/AboutPage";
+import MapPage from "./pages/MapPage";
+import FeedbackPage from "./pages/FeedbackPage";
 
 function App() {
   const isSmallDevice = useMediaQuery("only screen and (max-width : 767.98px)");
@@ -13,9 +17,12 @@ function App() {
       <div className="pt-20">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/map" element={<MapPage />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
         </Routes>
       </div>
-      {/* footer */}
+      <Footer />
     </div>
   )
 }
