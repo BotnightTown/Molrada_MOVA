@@ -16,11 +16,32 @@ function Footer(){
         </div>
         <div className="flex flex-col items-center justify-center">
           <div className="w-max h-max flex flex-row gap-5 *:w-[30px] *:cursor-pointer *:hover:scale-105 *:duration-300 *:transition-all">
-            <img src={Facebook} alt="Facebook" />
-            <img src={Instagram} alt="Instagram" />
-            <img src={TikTok} alt="TikTok" />
+            <a 
+              href="https://www.facebook.com/share/17NZvsm4jh/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img src={Facebook} alt="Facebook" />
+            </a>
+            <a 
+              href="https://www.instagram.com/molradamova?igsh=cXZsNzd1aGdsOGk3"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <img src={Instagram} alt="Instagram" />
+            </a>
+            <a 
+              href="https://www.tiktok.com/@molradamova"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <img src={TikTok} alt="TikTok" />
+            </a>
           </div>
-          <p className="font-e-UkraineHead text-sm font-light">molrada_mova@gmail.com</p>
+          <p className="font-e-UkraineHead text-sm font-light">mikolaivskaoblasnamolodiznarad@gmail.com</p>
         </div>
       </div>
       <div className="w-full h-max px-5 py-[10px] border-t-1 border-[#4ACBD1] text-xs font-extralight">

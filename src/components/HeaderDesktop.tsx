@@ -52,9 +52,9 @@ function HeaderItem({title, to}: HeaderItem){
 
 function HeaderDesktop(){
   return(
-    <header className="w-full h-20 px-7 py-2 bg-white fixed z-500 flex flex-row justify-start items-center gap-5 font-e-UkraineHead">
+    <header className="w-full h-16 px-7 py-2 bg-white fixed z-500 flex flex-row justify-start items-center gap-5 font-e-UkraineHead">
       <Link to="/" className="w-12 h-12 cursor-pointer">
-        <img src={MolradaLogo} alt="Молрада лого" className="w-13"/>
+        <img src={MolradaLogo} alt="Молрада лого" className="w-11"/>
       </Link>
       <HeaderItem title="головна" to="/" />
       <Dropdown title="про нас" to="/about">

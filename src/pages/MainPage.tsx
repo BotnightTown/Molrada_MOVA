@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import TitleBanner from "../components/TitleBanner";
 import Fish1 from '../assets/Fish 1.png'
 import Fish2 from '../assets/Fish 2.png'
@@ -11,25 +12,43 @@ interface ButtonTypes {
   text: string;
   backgroundColor: string;
   textColor: string;
+  href?: string;
+  to?: string;
 }
 
-function Button({text, backgroundColor, textColor}: ButtonTypes){
-  return(
-    <button 
-      type="button"
-      style={{ backgroundColor, color: textColor }}
-      className="w-full md:w-max md:px-16 h-10 rounded-lg font-bold text-xs md:text-sm cursor-pointer active:scale-95 duration-300 transition-all uppercase"
-    >
-      {text}
-    </button>
-  )
+function Button({text, backgroundColor, textColor, href, to}: ButtonTypes){
+  const classes = "w-full md:w-max md:px-16 h-10 rounded-lg font-bold text-xs md:text-sm cursor-pointer active:scale-95 duration-300 transition-all uppercase flex items-center justify-center";
+
+  if(href){
+    return(
+      <a 
+        style={{ backgroundColor, color: textColor }}
+        href={href}
+        className={classes}
+      >
+        {text}
+      </a>
+    )
+  }
+
+  if(to){
+    return(
+      <Link 
+        style={{ backgroundColor, color: textColor }}
+        to={to}
+        className={classes}
+      >
+        {text}
+      </Link>
+    )
+  }
 }
 
 function MainPage() {
   return(
     <div className="w-full h-max flex flex-col">
       <TitleBanner 
-        title="Голос молоді миколаївщини"
+        title="Голос молоді Миколаївщини"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
         src={Fish1}
         srcAlt="Члени молодіжної ради"
@@ -71,6 +90,7 @@ function MainPage() {
           text="доєднатися"
           backgroundColor="#4ACBD1"
           textColor="white"
+          href="https://t.me/molrada_mova_test_bot"
         />
       </section>
       <section className="w-full h-max p-4 sm:px-8 md:px-10 lg:px-15 xl:px-20 md:py-5 flex flex-col gap-3 md:gap-4 lg:gap-5">
@@ -111,14 +131,33 @@ function MainPage() {
           text="перейти до молодіжної мапи"
           backgroundColor="#FCD739"
           textColor="black"
+          to="/map"
         />
       </section>
       <article className="w-full h-max py-5 flex flex-col gap-5 items-center rounded-t-[20px] md:rounded-t-[40px] bg-[#4ACBD1] text-black">
         <h2 className="font-e-UkraineHead text-base font-normal">Слідкуйте за нами у соцмережах</h2>
         <div className="w-max h-max flex flex-row gap-5 *:w-[30px] *:cursor-pointer *:hover:scale-105 *:duration-300 *:transition-all">
-          <img src={Facebook} alt="Facebook" />
-          <img src={Instagram} alt="Instagram" />
-          <img src={TikTok} alt="TikTok" />
+          <a 
+            href="https://www.facebook.com/share/17NZvsm4jh/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Facebook} alt="Facebook" />
+          </a>
+          <a 
+            href="https://www.instagram.com/molradamova?igsh=cXZsNzd1aGdsOGk3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Instagram} alt="Instagram" />
+          </a>
+          <a 
+            href="https://www.tiktok.com/@molradamova"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={TikTok} alt="TikTok" />
+          </a>
         </div>
       </article>
     </div>

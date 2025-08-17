@@ -78,11 +78,11 @@ function HeaderMobile(){
 
   return(
     <header className="w-full fixed z-1000 text-black">
-      <div className="w-full h-20 bg-white py-2 px-7 flex flex-row justify-between items-center">
+      <div className="w-full h-16 bg-white py-2 px-7 flex flex-row justify-between items-center">
         <Link to="/">
-          <img src={MolradaLogo} alt="Молрада Лого" className='w-13'/>
+          <img src={MolradaLogo} alt="Молрада Лого" className='w-11'/>
         </Link>
-        <RxHamburgerMenu className='w-10 h-10 cursor-pointer' onClick={handleClick}/>
+        <RxHamburgerMenu className='w-8 h-8 cursor-pointer' onClick={handleClick}/>
       </div>
       <div className={`bg-white overflow-hiden transition-all duration-500 px-8 ${isOpen ? 'h-[calc(100vh-80px)] opacity-100 pointer-events-auto py-8' : 'h-0 opacity-0 pointer-events-none p-0'} flex flex-col gap-[10px]`}>
         <h3 className="font-bold uppercase text-center">меню</h3>

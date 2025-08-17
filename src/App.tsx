@@ -7,6 +7,7 @@ import MainPage from "./pages/MainPage";
 import AboutPage from "./pages/AboutPage";
 import MapPage from "./pages/MapPage";
 import FeedbackPage from "./pages/FeedbackPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const isSmallDevice = useMediaQuery("only screen and (max-width : 767.98px)");
@@ -14,7 +15,8 @@ function App() {
   return (
     <div className="w-full min-h-full h-max font-e-Ukraine">
       {isSmallDevice ? <HeaderMobile /> : <HeaderDesktop />}
-      <div className="pt-20">
+      <ScrollToTop />
+      <div className="pt-16">
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/about" element={<AboutPage />} />
